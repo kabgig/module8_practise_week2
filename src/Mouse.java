@@ -1,6 +1,4 @@
-public class Cat implements Movable, Edible, Eat{
-
-
+public class Mouse implements Movable, Edible{
     @Override
     public void move() {
 
@@ -8,11 +6,6 @@ public class Cat implements Movable, Edible, Eat{
 
     @Override
     public void beEaten() {
-
-    }
-
-    @Override
-    public void eat() {
 
     }
 }
