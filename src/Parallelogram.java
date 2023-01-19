@@ -1,16 +1,21 @@
-public class Parallelogram extends Quadrangle implements Figure {
-    private double alpha, beta;
+public class Parallelogram
+        extends Quadrangle
+        implements Figure {
+    double alpha, beta;
 
-    public Parallelogram(int a, int b, double alpha, double beta, String color) {
+    public Parallelogram(
+            int a,
+            int b,
+            double alpha,
+            double beta,
+            String color) {
         super(a, b, color);
         this.alpha = alpha;
         this.beta = beta;
     }
 
     @Override
-    public double area() {
-        return Math.max(a, b) * getHeight();
-    }
+    public double area() {return Math.max(a, b) * getHeight();}
 
     @Override
     public double perimeter() {
