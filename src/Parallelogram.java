@@ -9,7 +9,7 @@ public class Parallelogram extends Quadrangle implements Figure {
 
     @Override
     public double area() {
-        return a * b * Math.sin(alpha);
+        return Math.max(a, b) * getHeight();
     }
 
     @Override
@@ -19,12 +19,15 @@ public class Parallelogram extends Quadrangle implements Figure {
 
     @Override
     public double getLargeDiagonal() {
-        return Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(beta));
+        double d1 = Math.sqrt(a * a + b * b - 2 * a * b * Math.cos(Math.toRadians(beta)));
+        double d2 = Math.sqrt(a * a + b * b + 2 * a * b * Math.cos(Math.toRadians(alpha)));
+        return Math.max(d1, d2);
     }
 
     @Override
     public double getHeight() {
-        return alpha * Math.sin(alpha);
+        return a * Math.min(a * Math.sin(Math.toRadians(alpha)),
+                b * Math.sin(Math.toRadians(beta)));
     }
 
     @Override

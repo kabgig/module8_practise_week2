@@ -1,4 +1,6 @@
-public class Rhombuses extends Quadrangle implements Figure{
+import javax.swing.plaf.metal.MetalTheme;
+
+public class Rhombuses extends Quadrangle implements Figure {
     private double alpha, beta;
 
     public Rhombuses(int a, double alpha, double beta, String color) {
@@ -9,23 +11,26 @@ public class Rhombuses extends Quadrangle implements Figure{
 
     @Override
     public double area() {
-        return Math.pow(a, 2) * Math.sin(alpha);
+        return b * getHeight();
     }
 
 
     @Override
     public double perimeter() {
-        return a*4;
+        return a * 2 + 2 * b;
     }
 
     @Override
     public double getLargeDiagonal() {
-        return alpha * Math.sqrt(2 + 2 * Math.cos(alpha));
+        double d1 = a * Math.sqrt(2 - 2 * Math.cos(Math.toRadians(beta)));
+        double d2 = a * Math.sqrt(2 - 2 * Math.cos(Math.toRadians(alpha)));
+
+        return Math.max(d1, d2);
     }
 
     @Override
     public double getHeight() {
-        return area() / a;
+        return a * Math.sin(Math.toRadians(alpha));
     }
 
     @Override
