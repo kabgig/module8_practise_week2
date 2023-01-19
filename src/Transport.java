@@ -1,6 +1,12 @@
-public class Transport implements Soundable{
-    @Override
-    public void sound() {
-        System.out.println("dr-dr-dr");
+public abstract class Transport{
+
+    protected  int fuel, speed;
+
+    public Transport(int fuel, int speed) {
+        this.fuel = fuel;
+        this.speed = speed;
     }
+
+    abstract boolean canMove(int n);
+    abstract int getFuelLevel();
 }
