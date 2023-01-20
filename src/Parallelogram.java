@@ -31,7 +31,7 @@ public class Parallelogram
 
     @Override
     public double getHeight() {
-        return a * Math.min(a * Math.sin(Math.toRadians(alpha)),
+        return Math.min(a * Math.sin(Math.toRadians(alpha)),
                 b * Math.sin(Math.toRadians(beta)));
     }
 
